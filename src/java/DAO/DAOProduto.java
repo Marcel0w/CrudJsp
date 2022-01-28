@@ -1,6 +1,6 @@
 package DAO;
 
-import MODEL.Produto; // Os métodos get e set do usuário estão na classe da model
+import MODEL.Produto; // Os métodos get e set do produto estão na classe da model
 import java.sql.Connection; // Criar e abrir minha conexão - caminho do database
 import java.sql.PreparedStatement; // Responsável por executar instruções SQL (com parametros)
 import java.sql.Statement; //igual preparedStatment (sem parametros)
@@ -20,7 +20,7 @@ public class DAOProduto {
         conn = new Conexao().getConexao();
     }
     
-    //Criar o método Inserir Usuário
+    //Criar o método Inserir Produto
     public void InserirProduto(Produto produto) {
         // Criar uma variavel para receber instrução SQL
         String sql = "INSERT INTO tb_produtos (nome_produto, qtd_produto) VALUES (?, ?)";
@@ -40,7 +40,7 @@ public class DAOProduto {
         }
     }
     
-    // Método listar todos os usuários
+    // Método listar todos os Produtos
     public ArrayList<Produto> listarProduto() {
         // váriavel que recebe a instrução SQL
         String sql = "SELECT * FROM tb_produtos";
@@ -64,7 +64,7 @@ public class DAOProduto {
         return lista;
     }
     
-     // Método listar usuários por NOME
+     // Método listar Produtos por NOME
     public ArrayList<Produto> listarProdutoNome(String valor) {
         // váriavel que recebe a instrução SQL
         String sql = "SELECT * FROM tb_produtos WHERE nome_produto LIKE '%"+valor+"%' ";
@@ -88,7 +88,7 @@ public class DAOProduto {
         return lista;
     }
     
-     //Criar o método Inserir Usuário
+     //Criar o método Excluir Produto
     public void ExcluirProduto(Produto produto) {
         // Criar uma variavel para receber instrução SQL
         String sql = "DELETE FROM tb_produtos WHERE id_produto =?";
@@ -107,7 +107,7 @@ public class DAOProduto {
         }
     }
     
-       //Criar o método Inserir Usuário
+       //Criar o método Editar Produto
     public void EditarProduto(Produto produto) {
         // Criar uma variavel para receber instrução SQL
         String sql = "UPDATE tb_produtos SET nome_produto = ?, qtd_produto = ? WHERE id_produto = ?";

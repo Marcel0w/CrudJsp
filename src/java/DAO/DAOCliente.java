@@ -1,6 +1,6 @@
 package DAO;
 
-import MODEL.Cliente; // Os métodos get e set do usuário estão na classe da model
+import MODEL.Cliente; // Os métodos get e set do cliente estão na classe da model
 import java.sql.Connection; // Criar e abrir minha conexão - caminho do database
 import java.sql.PreparedStatement; // Responsável por executar instruções SQL (com parametros)
 import java.sql.Statement; //igual preparedStatment (sem parametros)
@@ -20,7 +20,7 @@ public class DAOCliente {
         conn = new Conexao().getConexao();
     }
     
-    //Criar o método Inserir Usuário
+    //Criar o método Inserir Cliente
     public void InserirCliente(Cliente cliente) {
         // Criar uma variavel para receber instrução SQL
         String sql = "INSERT INTO tb_cliente (nome_cliente, email_cliente, telefone_cliente) VALUES (?, ?, ?)";
@@ -41,7 +41,7 @@ public class DAOCliente {
         }
     }
     
-    // Método listar todos os usuários
+    // Método listar todos os clientes
     public ArrayList<Cliente> listarCliente() {
         // váriavel que recebe a instrução SQL
         String sql = "SELECT * FROM tb_cliente";
@@ -66,7 +66,7 @@ public class DAOCliente {
         return lista;
     }
     
-     // Método listar usuários por NOME
+     // Método listar clientes por NOME
     public ArrayList<Cliente> listarClienteNome(String valor) {
         // váriavel que recebe a instrução SQL
         String sql = "SELECT * FROM tb_cliente WHERE nome_cliente LIKE '%"+valor+"%' ";
@@ -91,7 +91,7 @@ public class DAOCliente {
         return lista;
     }
     
-      //Criar o método Inserir Usuário
+      //Criar o método excluir cliente
     public void ExcluirCliente(Cliente cliente) {
         // Criar uma variavel para receber instrução SQL
         String sql = "DELETE FROM tb_cliente WHERE id_cliente =?";
@@ -110,7 +110,7 @@ public class DAOCliente {
         }
     }
     
-       //Criar o método Inserir Usuário
+       //Criar o método editar cliente
     public void EditarCliente(Cliente cliente) {
         // Criar uma variavel para receber instrução SQL
         String sql = "UPDATE tb_cliente SET nome_cliente = ?,email_cliente = ?, telefone_cliente = ? WHERE id_cliente = ?";

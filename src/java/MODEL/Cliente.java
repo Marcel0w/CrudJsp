@@ -5,7 +5,7 @@ public class Cliente {
     private String email;
     private String telefone;
     
-    //Criação de métodos de usuário
+    //Criação de métodos de cliente
 
     public int getId() {
         return id;

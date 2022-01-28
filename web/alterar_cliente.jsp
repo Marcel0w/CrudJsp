@@ -15,6 +15,7 @@
         <div id="conteudo">
             <form method="post" action="ExAlterarCliente.jsp" 
                   onSubmit="return confirm('Os dados estão corretos?')">
+                <fieldset>
                     <h1>ALTERAR CLIENTES</h1>
                     <p>
                         <label  for="id">Código do Cliente</label>
@@ -39,6 +40,7 @@
                     <p>
                         <input type="submit" value="ALTERAR"/>
                     </p>
+                </fieldset>
             </form>
             <p class="link">
                 <a href="consultar_cliente.jsp">Consultar Clientes</a>

@@ -4,7 +4,7 @@ public class Produto {
     private String nome;
     private int quantidade;
     
-    //Criação de métodos de usuário
+    //Criação de métodos de produto
 
     public int getId() {
         return id;
